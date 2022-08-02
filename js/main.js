@@ -29,7 +29,7 @@ function singleMovie(movie) {
   divRow.appendChild(divColThird);
 
   var posterImg = document.createElement('img');
-  posterImg.className = 'margin-rigth';
+  posterImg.className = 'margin-right';
   posterImg.setAttribute('src', movie.image);
   divColThird.appendChild(posterImg);
 
