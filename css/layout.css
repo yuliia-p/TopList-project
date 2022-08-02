@@ -1,0 +1,39 @@
+.container {
+  /* max-width: 575px; */
+
+  /* margin: 0 auto; */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column-full,
+.column-half {
+  flex-basis: 100%;
+}
+
+.column-third {
+  flex-basis: calc(100% / 3);
+}
+
+.column-two-thirds {
+  flex-basis: 66%;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    /* max-width: 900px; */
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .column-half {
+    flex-basis: 50%;
+    width: 50%;
+  }
+}

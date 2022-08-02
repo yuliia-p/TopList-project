@@ -1,0 +1,102 @@
+body {
+  font-family: Inter, sans-serif;
+  color: white;
+  background-color: #111118;
+  font-weight: bold;
+}
+
+.header {
+  background-color: #1e1e29;
+}
+
+.header > h3 {
+  margin-left: 11px;
+}
+
+img {
+  max-width: 114px;
+}
+
+.content-holder {
+  /* width: 100%; */
+  background-color: #1e1e29;
+  border-radius: 10px;
+}
+
+.margin {
+  margin: 11px 11px 0;
+}
+
+.margin-rigth {
+  margin-right: 11px;
+}
+
+.year,
+.crew,
+.movie-id,
+.rank {
+  margin: 0;
+}
+
+p > span {
+  font-weight: 100;
+}
+
+span.rating {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.movie-title,
+p.rating {
+  margin: 11px 0 5px;
+}
+
+p {
+  font-size: smaller;
+}
+
+@media screen and (min-width: 768px) {
+  img {
+    max-width: 200px;
+    max-height: 270px;
+  }
+
+  body {
+    font-size: larger;
+  }
+
+  .header {
+    margin-bottom: 10px;
+  }
+
+  .margin {
+    margin: 0 0 10px;
+  }
+
+  .margin-rigth {
+    margin-right: 0;
+  }
+
+  h4 {
+    padding-top: 10px;
+  }
+
+  .rating {
+    text-align: end;
+    font-size: x-small;
+  }
+
+  span.rating {
+    font-size: x-large;
+  }
+
+  .year,
+  .crew,
+  .movie-id,
+  .rank,
+  .rating {
+    padding-right: 7px;
+    margin-bottom: 5px;
+  }
+}
