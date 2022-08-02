@@ -1,15 +1,5 @@
 /* eslint-disable no-unused-vars */
-// movie = {
-// crew: "Frank Darabont (dir.), Tim Robbins, Morgan Freeman"
-// fullTitle: "The Shawshank Redemption (1994)"
-// id: "tt0111161"
-// imDbRating: "9.2"
-// imDbRatingCount: "2618130"
-// image: "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX128_CR0,12,128,176_AL_.jpg"
-// rank: "1"
-// title: "The Shawshank Redemption"
-// year: "1994"
-// }
+
 var divMoviesList = document.querySelector('.all-movies-list');
 
 function getMovies() {
@@ -17,11 +7,8 @@ function getMovies() {
   xhr.open('GET', 'https://imdb-api.com/en/API/Top250Movies/k_56r9dfn2');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-    // console.log('xhr.response: ', xhr.response);
-    // console.log('xhr.response.items: ', xhr.response.items);
-    // console.log('xhr.response.items[0]: ', xhr.response.items[0]);
-    // console.log('xhr.response.items[0].crew: ', xhr.response.items[0].crew);
     for (var i = 0; i < xhr.response.items.length; i++) {
+      // console.log(xhr.response.items[0]);
       var movieListItem = singleMovie(xhr.response.items[i]);
       divMoviesList.appendChild(movieListItem);
     }
@@ -35,7 +22,7 @@ function singleMovie(movie) {
   divContent.className = 'column-half content-holder margin';
 
   var divRow = document.createElement('div');
-  divRow.className = 'row';
+  divRow.className = 'row row-content';
   divContent.appendChild(divRow);
 
   var divColThird = document.createElement('div');
@@ -90,15 +77,7 @@ function singleMovie(movie) {
   var spanRank = document.createElement('span');
   spanRank.className = 'rank';
   spanRank.textContent = movie.rank;
+  pRank.appendChild(spanRank);
 
   return divContent;
 }
-
-// document.addEventListener('DOMContentLoaded', appendData);
-
-// function appendData() {
-//   for (var i = 0; i < xhr.response.items.length; i++) {
-//     var movieListItem = singleMovie(xhr.response.items[i]);
-//     divMoviesList.appendChild(movieListItem);
-//   }
-// }
