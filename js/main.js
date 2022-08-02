@@ -8,7 +8,6 @@ function getMovies() {
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     for (var i = 0; i < xhr.response.items.length; i++) {
-      // console.log(xhr.response.items[0]);
       var movieListItem = singleMovie(xhr.response.items[i]);
       divMoviesList.appendChild(movieListItem);
     }
