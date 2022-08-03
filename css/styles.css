@@ -5,16 +5,16 @@ body {
   font-weight: bold;
 }
 
+.hidden {
+  display: none;
+}
+
 .header {
-  background-color: #1e1e29;
+  background-color: #4f4f63;
 }
 
 .header > h3 {
   margin-left: 11px;
-}
-
-img {
-  max-width: 130px;
 }
 
 .content-holder {
@@ -24,10 +24,6 @@ img {
 
 .margin {
   margin: 11px 11px 0;
-}
-
-.margin-right {
-  margin-right: 11px;
 }
 
 .year,
@@ -48,11 +44,71 @@ span.rating {
 
 .movie-title,
 p.rating {
-  margin: 11px 0 5px;
+  margin: 8px 0 5px;
 }
 
 p {
   font-size: smaller;
+}
+
+.more-button {
+  text-align: end;
+}
+
+.row-content {
+  position: relative;
+}
+
+.more-details-button {
+  font-size: x-small;
+  color: white;
+  background-color: #4f4f63;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 12px;
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+}
+
+img.single-movie-poster {
+  width: 100%;
+  padding-right: 10px;
+}
+
+p.single-rating {
+  font-weight: 400;
+  text-align: end;
+  color: #fe5f55;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+span.single-rating {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.margin-line-spacing {
+  margin: 2px;
+}
+
+.padding {
+  padding: 10px;
+}
+
+.padding-left {
+  padding-left: 10px;
+}
+
+.flex {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+img {
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -64,9 +120,8 @@ p {
     font-size: larger;
   }
 
-  .header {
-    margin-bottom: 10px;
-    padding: 10px;
+  .padding-left {
+    padding-left: 10px;
   }
 
   .margin {
@@ -98,10 +153,47 @@ p {
   .content-holder {
     padding: 15px 25px;
     background-color: #111118;
+    max-width: 1000px;
   }
 
   .row-content {
     background-color: #1e1e29;
     border-radius: 10px;
+    position: relative;
+  }
+
+  .more-details-button {
+    border-radius: 19px;
+    font-size: medium;
+    padding: 15px 25px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  img.single-movie-poster {
+    width: 100%;
+  }
+
+  .backgroung-color {
+    background-color: #1e1e29;
+    border-radius: 10px;
+  }
+
+  span.single-rating {
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+  .margin-line-spacing {
+    margin: 8px 0;
+  }
+
+  .header > h3 {
+    font-size: xx-large;
+  }
+
+  h3.movie-title {
+    margin: 0;
   }
 }

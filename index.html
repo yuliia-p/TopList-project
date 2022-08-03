@@ -13,14 +13,21 @@
 <body>
   <header>
     <div class="row">
-      <div class="column-full header">
-        <h3>NAME</h3>
+      <div class="column-full header padding flex">
+        <h2>NAME</h2>
+        <a
+        data-view="all-movies-list"
+        id="movies-list"
+        class="padding">All Movies</a>
       </div>
     </div>
   </header>
   <main>
     <div class="container">
-      <div data-view="all-movies-list" class="row all-movies-list">
+      <div data-view="all-movies-list" class="view row all-movies-list">
+
+      </div>
+      <div data-view="more-details" class="row view hidden more-details">
 
       </div>
     </div>
