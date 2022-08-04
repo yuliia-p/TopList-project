@@ -111,6 +111,19 @@ img {
   width: 100%;
 }
 
+.watchlist-button {
+  text-align: center;
+}
+
+.add-to-watchlist {
+  font-size: larger;
+  color: white;
+  background-color: #4f4f63;
+  padding: 20px 62px;
+  border: none;
+  border-radius: 15px;
+}
+
 @media screen and (min-width: 768px) {
   img {
     min-width: 190px;
@@ -153,7 +166,8 @@ img {
   .content-holder {
     padding: 15px 25px;
     background-color: #111118;
-    max-width: 1000px;
+
+    /* max-width: 1000px; */
   }
 
   .row-content {
@@ -195,5 +209,18 @@ img {
 
   h3.movie-title {
     margin: 0;
+  }
+
+  .watchlist-button {
+    text-align: end;
+  }
+
+  .add-to-watchlist {
+    font-size: smaller;
+    color: white;
+    background-color: #4f4f63;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 15px;
   }
 }

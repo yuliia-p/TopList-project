@@ -2,6 +2,9 @@
 var divMoviesList = document.querySelector('.all-movies-list');
 var viewElements = document.querySelectorAll('.view'); // my views
 var divMoreDetails = document.querySelector('.more-details');
+var buttonAllMovies = document.querySelector('#movies-list');
+
+buttonAllMovies.addEventListener('click', viewAllMovies);
 
 function getMovies() {
   var xhr = new XMLHttpRequest();
@@ -123,9 +126,6 @@ function viewMoreDetails(event) {
   divMoreDetails.replaceChildren();
 }
 
-var buttonAllMovies = document.querySelector('#movies-list');
-buttonAllMovies.addEventListener('click', viewAllMovies);
-
 function viewAllMovies(event) {
   if (event.target.matches('#movies-list')) {
     switchView('all-movies-list');
@@ -134,6 +134,7 @@ function viewAllMovies(event) {
 
 function singleMovieInfo(movie) { // ?
   var divMoreInfo = document.createElement('div');
+  divMoreInfo.setAttribute('data-movie-id', movie.imdbID);
   divMoreInfo.className = 'column-full content-holder margin';
 
   var divBackColor = document.createElement('div');
@@ -203,15 +204,6 @@ function singleMovieInfo(movie) { // ?
   spanWriter.textContent = movie.Writer;
   pWriter.appendChild(spanWriter);
 
-  var pLanguage = document.createElement('p');
-  pLanguage.className = 'language margin-line-spacing';
-  pLanguage.textContent = 'Language ';
-  divColTwoThirdsDesk.appendChild(pLanguage);
-  var spanLanguage = document.createElement('span');
-  spanLanguage.className = 'writer';
-  spanLanguage.textContent = movie.Language; // ?
-  pLanguage.appendChild(spanLanguage);
-
   var pCountry = document.createElement('p');
   pCountry.className = 'country margin-line-spacing';
   pCountry.textContent = 'Country ';
@@ -236,7 +228,7 @@ function singleMovieInfo(movie) { // ?
   divColTwoThirdsDesk.appendChild(pRelease);
   var spanRelease = document.createElement('span');
   spanRelease.className = 'release';
-  spanRelease.textContent = movie.Rated; // ?
+  spanRelease.textContent = movie.Released; // ?
   pRelease.appendChild(spanRelease);
 
   var divRow2 = document.createElement('div');
@@ -270,5 +262,57 @@ function singleMovieInfo(movie) { // ?
   spanPlot.textContent = movie.Plot;
   pPlot.appendChild(spanPlot);
 
+  var divRow3 = document.createElement('div');
+  divRow3.className = 'row';
+  divBackColor.appendChild(divRow3);
+
+  var divColFull2 = document.createElement('div');
+  divColFull2.className = 'column-full padding';
+  divRow3.appendChild(divColFull2);
+
+  var divWatchList = document.createElement('div');
+  divWatchList.className = 'watchlist-button';
+  divColFull2.appendChild(divWatchList);
+
+  var addButton = document.createElement('button');
+  addButton.setAttribute('type', 'button');
+  addButton.className = 'add-to-watchlist';
+  addButton.textContent = 'Add to Watchlist';
+  divWatchList.appendChild(addButton);
+  addButton.addEventListener('click', addMovie);
+
   return divMoreInfo;
+}
+
+function addMovie(event) {
+  if (event.target.matches('.add-to-watchlist')) {
+    var movie = {};
+    var closestDiv = event.target.closest('.content-holder');
+    var movieID = closestDiv.getAttribute('data-movie-id');
+    getInfo(movieID);
+  }
+  function getInfo(movieID) {
+    var xhr2 = new XMLHttpRequest();
+    xhr2.open('GET', 'http://www.omdbapi.com/?' + 'i=' + movieID + '&apikey=b1862476&' + '&plot=full');
+    xhr2.responseType = 'json';
+    xhr2.addEventListener('load', function () {
+      movie = {
+        Director: xhr2.response.Director,
+        Genre: xhr2.response.Genre,
+        Actors: xhr2.response.Actors,
+        Writer: xhr2.response.Writer,
+        Country: xhr2.response.Country,
+        Rated: xhr2.response.Rated,
+        imdbRating: xhr2.response.imdbRating,
+        Year: xhr2.response.Year,
+        Plot: xhr2.response.Plot,
+        Title: xhr2.response.Title,
+        Poster: xhr2.response.Poster,
+        Released: xhr2.response.Released
+      };
+      data.movies.push(movie);
+    });
+    xhr2.send();
+    return xhr2.response;
+  }
 }
