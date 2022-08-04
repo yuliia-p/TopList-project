@@ -16,6 +16,10 @@
   flex-basis: 60%;
 }
 
+.column-two-thirds-mobile {
+  flex-basis: 60%;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     margin: auto;
@@ -31,6 +35,14 @@
   }
 
   .column-two-thirds {
+    flex-basis: 64%;
+  }
+
+  .column-two-thirds-mobile {
+    flex-basis: 30%;
+  }
+
+  .column-two-thirds-desktop {
     flex-basis: 64%;
   }
 }
