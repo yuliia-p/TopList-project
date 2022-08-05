@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
-var divMoviesList = document.querySelector('.all-movies-list'); // all movies view
-var viewElements = document.querySelectorAll('.view'); // my views
-var divMoreDetails = document.querySelector('.more-details'); // one movie view
-var divWatchList = document.querySelector('.watchlist'); // watchlist
+var divMoviesList = document.querySelector('.all-movies-list');
+var viewElements = document.querySelectorAll('.view');
+var divMoreDetails = document.querySelector('.more-details');
+var divWatchList = document.querySelector('.watchlist');
 var buttonAllMovies = document.querySelector('#movies-list');
 var aWatchlist = document.querySelector('#watchlist');
+var modal = document.querySelector('.modal');
 
 buttonAllMovies.addEventListener('click', viewAllMovies);
 aWatchlist.addEventListener('click', viewWatchlist);
@@ -54,9 +55,11 @@ function moviesList(movie) {
   var pRating = document.createElement('p');
   pRating.className = 'rating';
   pRating.textContent = 'IMDb rating ';
+  pRating.style.color = '#FE5F55';
   divColTwoThirds.appendChild(pRating);
   var spanRating = document.createElement('span');
   spanRating.className = 'rating';
+  spanRating.style.color = '#FE5F55';
   spanRating.textContent = movie.imDbRating;
   pRating.appendChild(spanRating);
 
@@ -86,7 +89,6 @@ function moviesList(movie) {
   spanRank.className = 'rank';
   spanRank.textContent = movie.rank;
   pRank.appendChild(spanRank);
-  // add id
 
   var divButton = document.createElement('div');
   divButton.className = 'more-button';
@@ -103,9 +105,9 @@ function moviesList(movie) {
 function switchView(viewName) {
   for (var x = 0; x < viewElements.length; x++) {
     if (viewElements[x].getAttribute('data-view') === viewName) {
-      viewElements[x].classList.remove('hidden'); // remove hidden
+      viewElements[x].classList.remove('hidden');
     } else {
-      viewElements[x].classList.add('hidden'); // add hidden
+      viewElements[x].classList.add('hidden');
     }
   }
 }
@@ -117,6 +119,7 @@ function viewMoreDetails(event) {
     switchView('more-details');
     var closestDiv = event.target.closest('.content-holder');
     var movieID = closestDiv.getAttribute('data-movie-id');
+
     for (var i = 0; i < data.allMovies.length; i++) {
       if (data.allMovies[i].id === movieID) {
         data.currentMovie = data.allMovies[i];
@@ -124,6 +127,7 @@ function viewMoreDetails(event) {
     }
     getInfo(movieID);
   }
+
   function getInfo(movieID) {
     var xhr2 = new XMLHttpRequest();
     xhr2.open('GET', 'http://www.omdbapi.com/?' + 'i=' + movieID + '&apikey=b1862476&' + '&plot=full');
@@ -131,6 +135,15 @@ function viewMoreDetails(event) {
     xhr2.addEventListener('load', function () {
       var detaliedMovie = singleMovieInfo(xhr2.response);
       divMoreDetails.appendChild(detaliedMovie);
+      for (var y = 0; y < data.savedMovies.length; y++) {
+        if (data.savedMovies[y].id === movieID) {
+          var addButton = document.querySelector('.watchlist-button');
+          var removeButton = document.querySelector('.delete-button');
+
+          addButton.classList.add('hidden');
+          removeButton.classList.remove('hidden');
+        }
+      }
     });
     xhr2.send();
   }
@@ -181,13 +194,23 @@ function singleMovieInfo(movie) {
   spanSingleRating.textContent = movie.Ratings[0].Value;
   pSingleRating.appendChild(spanSingleRating);
 
+  var h2Titile = document.createElement('h2');
+  h2Titile.className = 'movie-title desktop-view';
+  h2Titile.textContent = movie.Title;
+  divColTwoThirdsDesk.appendChild(h2Titile);
+
+  var pYear2 = document.createElement('p');
+  pYear2.className = 'year desktop-view';
+  pYear2.textContent = '(' + movie.Year + ')';
+  divColTwoThirdsDesk.appendChild(pYear2);
+
   var pDirector = document.createElement('p');
   pDirector.className = 'director margin-line-spacing';
   pDirector.textContent = 'Director ';
   divColTwoThirdsDesk.appendChild(pDirector);
   var spanDirector = document.createElement('span');
   spanDirector.className = 'director';
-  spanDirector.textContent = movie.Director; // ?
+  spanDirector.textContent = movie.Director;
   pDirector.appendChild(spanDirector);
 
   var pGenre = document.createElement('p');
@@ -223,7 +246,7 @@ function singleMovieInfo(movie) {
   divColTwoThirdsDesk.appendChild(pCountry);
   var spanCountry = document.createElement('span');
   spanCountry.className = 'country';
-  spanCountry.textContent = movie.Country; // ?
+  spanCountry.textContent = movie.Country;
   pCountry.appendChild(spanCountry);
 
   var pRated = document.createElement('p');
@@ -232,7 +255,7 @@ function singleMovieInfo(movie) {
   divColTwoThirdsDesk.appendChild(pRated);
   var spanRated = document.createElement('span');
   spanRated.className = 'rated';
-  spanRated.textContent = movie.Rated; // ?
+  spanRated.textContent = movie.Rated;
   pRated.appendChild(spanRated);
 
   var pRelease = document.createElement('p');
@@ -241,7 +264,7 @@ function singleMovieInfo(movie) {
   divColTwoThirdsDesk.appendChild(pRelease);
   var spanRelease = document.createElement('span');
   spanRelease.className = 'release';
-  spanRelease.textContent = movie.Released; // ?
+  spanRelease.textContent = movie.Released;
   pRelease.appendChild(spanRelease);
 
   var divRow2 = document.createElement('div');
@@ -253,13 +276,13 @@ function singleMovieInfo(movie) {
   divRow2.appendChild(divColFull);
 
   var h3Titile = document.createElement('h3');
-  h3Titile.className = 'movie-title';
+  h3Titile.className = 'movie-title mobile-view';
   h3Titile.textContent = movie.Title;
   divColFull.appendChild(h3Titile);
 
   var pYear = document.createElement('p');
-  pYear.className = 'year';
-  pYear.textContent = movie.Year;
+  pYear.className = 'year mobile-view';
+  pYear.textContent = '(' + movie.Year + ')';
   divColFull.appendChild(pYear);
 
   var pStory = document.createElement('p');
@@ -294,6 +317,16 @@ function singleMovieInfo(movie) {
   divWatchList.appendChild(addButton);
   addButton.addEventListener('click', addMovie);
 
+  var removeDiv = document.createElement('div');
+  removeDiv.className = 'delete-button hidden';
+  divColFull2.appendChild(removeDiv);
+
+  var removeButton = document.createElement('button');
+  removeButton.setAttribute('type', 'button');
+  removeButton.className = 'delete-from-watchlist';
+  removeButton.textContent = 'Remove from Watchlist';
+  removeDiv.appendChild(removeButton);
+  removeButton.addEventListener('click', removeFromWatchlist);
   return divMoreInfo;
 }
 
@@ -325,5 +358,30 @@ function viewWatchlist() {
   for (var y = 0; y < data.savedMovies.length; y++) {
     var savedList = moviesList(data.savedMovies[y]);
     divWatchList.prepend(savedList);
+  }
+
+}
+
+function removeFromWatchlist(event) {
+
+  if (event.target.matches('.delete-from-watchlist')) {
+    modal.classList.remove('hidden');
+    var closestDiv = event.target.closest('.content-holder');
+    var movieID = closestDiv.getAttribute('data-movie-id');
+
+    var cancelButton = document.querySelector('.cancel-button');
+    cancelButton.addEventListener('click', function () {
+      modal.classList.add('hidden');
+    });
+    var deleteButton = document.querySelector('.confirm-button');
+    deleteButton.addEventListener('click', function () {
+      for (var y = 0; y < data.savedMovies.length; y++) {
+        if (data.savedMovies[y].id === movieID) {
+          data.savedMovies.splice(y, 1);
+        }
+      }
+      modal.classList.add('hidden');
+      viewWatchlist();
+    });
   }
 }
