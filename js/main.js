@@ -5,6 +5,7 @@ var divMoreDetails = document.querySelector('.more-details'); // one movie view
 var divWatchList = document.querySelector('.watchlist'); // watchlist
 var buttonAllMovies = document.querySelector('#movies-list');
 var aWatchlist = document.querySelector('#watchlist');
+var modal = document.querySelector('.modal');
 
 buttonAllMovies.addEventListener('click', viewAllMovies);
 aWatchlist.addEventListener('click', viewWatchlist);
@@ -54,9 +55,11 @@ function moviesList(movie) {
   var pRating = document.createElement('p');
   pRating.className = 'rating';
   pRating.textContent = 'IMDb rating ';
+  pRating.style.color = '#FE5F55';
   divColTwoThirds.appendChild(pRating);
   var spanRating = document.createElement('span');
   spanRating.className = 'rating';
+  spanRating.style.color = '#FE5F55';
   spanRating.textContent = movie.imDbRating;
   pRating.appendChild(spanRating);
 
@@ -117,6 +120,7 @@ function viewMoreDetails(event) {
     switchView('more-details');
     var closestDiv = event.target.closest('.content-holder');
     var movieID = closestDiv.getAttribute('data-movie-id');
+
     for (var i = 0; i < data.allMovies.length; i++) {
       if (data.allMovies[i].id === movieID) {
         data.currentMovie = data.allMovies[i];
@@ -124,6 +128,7 @@ function viewMoreDetails(event) {
     }
     getInfo(movieID);
   }
+
   function getInfo(movieID) {
     var xhr2 = new XMLHttpRequest();
     xhr2.open('GET', 'http://www.omdbapi.com/?' + 'i=' + movieID + '&apikey=b1862476&' + '&plot=full');
@@ -131,6 +136,15 @@ function viewMoreDetails(event) {
     xhr2.addEventListener('load', function () {
       var detaliedMovie = singleMovieInfo(xhr2.response);
       divMoreDetails.appendChild(detaliedMovie);
+      for (var y = 0; y < data.savedMovies.length; y++) {
+        if (data.savedMovies[y].id === movieID) {
+          var addButton = document.querySelector('.watchlist-button');
+          var removeButton = document.querySelector('.delete-button');
+
+          addButton.classList.add('hidden');
+          removeButton.classList.remove('hidden');
+        }
+      }
     });
     xhr2.send();
   }
@@ -259,7 +273,7 @@ function singleMovieInfo(movie) {
 
   var pYear = document.createElement('p');
   pYear.className = 'year';
-  pYear.textContent = movie.Year;
+  pYear.textContent = '(' + movie.Year + ')';
   divColFull.appendChild(pYear);
 
   var pStory = document.createElement('p');
@@ -294,6 +308,16 @@ function singleMovieInfo(movie) {
   divWatchList.appendChild(addButton);
   addButton.addEventListener('click', addMovie);
 
+  var removeDiv = document.createElement('div');
+  removeDiv.className = 'delete-button hidden';
+  divColFull2.appendChild(removeDiv);
+
+  var removeButton = document.createElement('button');
+  removeButton.setAttribute('type', 'button');
+  removeButton.className = 'delete-from-watchlist';
+  removeButton.textContent = 'Remove from Watchlist';
+  removeDiv.appendChild(removeButton);
+  removeButton.addEventListener('click', removeFromWatchlist);
   return divMoreInfo;
 }
 
@@ -325,5 +349,30 @@ function viewWatchlist() {
   for (var y = 0; y < data.savedMovies.length; y++) {
     var savedList = moviesList(data.savedMovies[y]);
     divWatchList.prepend(savedList);
+  }
+
+}
+
+function removeFromWatchlist(event) {
+
+  if (event.target.matches('.delete-from-watchlist')) {
+    modal.classList.remove('hidden');
+    var closestDiv = event.target.closest('.content-holder');
+    var movieID = closestDiv.getAttribute('data-movie-id');
+
+    var cancelButton = document.querySelector('.cancel-button');
+    cancelButton.addEventListener('click', function () {
+      modal.classList.add('hidden');
+    });
+    var deleteButton = document.querySelector('.confirm-button');
+    deleteButton.addEventListener('click', function () {
+      for (var y = 0; y < data.savedMovies.length; y++) {
+        if (data.savedMovies[y].id === movieID) {
+          data.savedMovies.splice(y, 1);
+        }
+      }
+      modal.classList.add('hidden');
+      viewWatchlist();
+    });
   }
 }
