@@ -281,7 +281,7 @@ function singleMovieInfo(movie) {
   divColFull.appendChild(h3Titile);
 
   var pYear = document.createElement('p');
-  pYear.className = 'year modile-view';
+  pYear.className = 'year mobile-view';
   pYear.textContent = '(' + movie.Year + ')';
   divColFull.appendChild(pYear);
 
