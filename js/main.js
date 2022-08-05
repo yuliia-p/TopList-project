@@ -276,7 +276,7 @@ function singleMovieInfo(movie) {
   divRow2.appendChild(divColFull);
 
   var h3Titile = document.createElement('h3');
-  h3Titile.className = 'movie-title modile-view';
+  h3Titile.className = 'movie-title mobile-view';
   h3Titile.textContent = movie.Title;
   divColFull.appendChild(h3Titile);
 
