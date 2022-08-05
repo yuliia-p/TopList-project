@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-vars */
-var divMoviesList = document.querySelector('.all-movies-list');
+var divMoviesList = document.querySelector('.all-movies-list'); // all movies view
 var viewElements = document.querySelectorAll('.view'); // my views
-var divMoreDetails = document.querySelector('.more-details');
+var divMoreDetails = document.querySelector('.more-details'); // one movie view
+var divWatchList = document.querySelector('.watchlist'); // watchlist
 var buttonAllMovies = document.querySelector('#movies-list');
+var aWatchlist = document.querySelector('#watchlist');
 
 buttonAllMovies.addEventListener('click', viewAllMovies);
+aWatchlist.addEventListener('click', viewWatchlist);
 
 function getMovies() {
   var xhr = new XMLHttpRequest();
@@ -14,6 +17,7 @@ function getMovies() {
     for (var i = 0; i < xhr.response.items.length; i++) {
       var movieListItem = moviesList(xhr.response.items[i]);
       divMoviesList.appendChild(movieListItem);
+      data.allMovies = xhr.response.items;
     }
   });
   xhr.send();
@@ -107,10 +111,17 @@ function switchView(viewName) {
 }
 
 function viewMoreDetails(event) {
+  buttonAllMovies.classList.remove('selected');
+
   if (event.target.tagName === 'BUTTON') {
     switchView('more-details');
     var closestDiv = event.target.closest('.content-holder');
     var movieID = closestDiv.getAttribute('data-movie-id');
+    for (var i = 0; i < data.allMovies.length; i++) {
+      if (data.allMovies[i].id === movieID) {
+        data.currentMovie = data.allMovies[i];
+      }
+    }
     getInfo(movieID);
   }
   function getInfo(movieID) {
@@ -129,10 +140,12 @@ function viewMoreDetails(event) {
 function viewAllMovies(event) {
   if (event.target.matches('#movies-list')) {
     switchView('all-movies-list');
+    buttonAllMovies.classList.add('selected');
+    aWatchlist.classList.remove('selected');
   }
 }
 
-function singleMovieInfo(movie) { // ?
+function singleMovieInfo(movie) {
   var divMoreInfo = document.createElement('div');
   divMoreInfo.setAttribute('data-movie-id', movie.imdbID);
   divMoreInfo.className = 'column-full content-holder margin';
@@ -296,23 +309,21 @@ function addMovie(event) {
     xhr2.open('GET', 'http://www.omdbapi.com/?' + 'i=' + movieID + '&apikey=b1862476&' + '&plot=full');
     xhr2.responseType = 'json';
     xhr2.addEventListener('load', function () {
-      movie = {
-        Director: xhr2.response.Director,
-        Genre: xhr2.response.Genre,
-        Actors: xhr2.response.Actors,
-        Writer: xhr2.response.Writer,
-        Country: xhr2.response.Country,
-        Rated: xhr2.response.Rated,
-        imdbRating: xhr2.response.imdbRating,
-        Year: xhr2.response.Year,
-        Plot: xhr2.response.Plot,
-        Title: xhr2.response.Title,
-        Poster: xhr2.response.Poster,
-        Released: xhr2.response.Released
-      };
-      data.movies.push(movie);
+      movie = Object.assign(data.currentMovie, xhr2.response);
+      data.savedMovies.push(movie);
+      viewWatchlist();
     });
     xhr2.send();
-    return xhr2.response;
+  }
+}
+
+function viewWatchlist() {
+  divWatchList.replaceChildren();
+  buttonAllMovies.classList.remove('selected');
+  aWatchlist.classList.add('selected');
+  switchView('watchlist');
+  for (var y = 0; y < data.savedMovies.length; y++) {
+    var savedList = moviesList(data.savedMovies[y]);
+    divWatchList.prepend(savedList);
   }
 }
