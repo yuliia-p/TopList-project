@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-var divMoviesList = document.querySelector('.all-movies-list'); // all movies view
-var viewElements = document.querySelectorAll('.view'); // my views
-var divMoreDetails = document.querySelector('.more-details'); // one movie view
-var divWatchList = document.querySelector('.watchlist'); // watchlist
+var divMoviesList = document.querySelector('.all-movies-list');
+var viewElements = document.querySelectorAll('.view');
+var divMoreDetails = document.querySelector('.more-details');
+var divWatchList = document.querySelector('.watchlist');
 var buttonAllMovies = document.querySelector('#movies-list');
 var aWatchlist = document.querySelector('#watchlist');
 var modal = document.querySelector('.modal');
@@ -89,7 +89,6 @@ function moviesList(movie) {
   spanRank.className = 'rank';
   spanRank.textContent = movie.rank;
   pRank.appendChild(spanRank);
-  // add id
 
   var divButton = document.createElement('div');
   divButton.className = 'more-button';
@@ -106,9 +105,9 @@ function moviesList(movie) {
 function switchView(viewName) {
   for (var x = 0; x < viewElements.length; x++) {
     if (viewElements[x].getAttribute('data-view') === viewName) {
-      viewElements[x].classList.remove('hidden'); // remove hidden
+      viewElements[x].classList.remove('hidden');
     } else {
-      viewElements[x].classList.add('hidden'); // add hidden
+      viewElements[x].classList.add('hidden');
     }
   }
 }
@@ -195,13 +194,23 @@ function singleMovieInfo(movie) {
   spanSingleRating.textContent = movie.Ratings[0].Value;
   pSingleRating.appendChild(spanSingleRating);
 
+  var h2Titile = document.createElement('h2');
+  h2Titile.className = 'movie-title desktop-view';
+  h2Titile.textContent = movie.Title;
+  divColTwoThirdsDesk.appendChild(h2Titile);
+
+  var pYear2 = document.createElement('p');
+  pYear2.className = 'year desktop-view';
+  pYear2.textContent = '(' + movie.Year + ')';
+  divColTwoThirdsDesk.appendChild(pYear2);
+
   var pDirector = document.createElement('p');
   pDirector.className = 'director margin-line-spacing';
   pDirector.textContent = 'Director ';
   divColTwoThirdsDesk.appendChild(pDirector);
   var spanDirector = document.createElement('span');
   spanDirector.className = 'director';
-  spanDirector.textContent = movie.Director; // ?
+  spanDirector.textContent = movie.Director;
   pDirector.appendChild(spanDirector);
 
   var pGenre = document.createElement('p');
@@ -237,7 +246,7 @@ function singleMovieInfo(movie) {
   divColTwoThirdsDesk.appendChild(pCountry);
   var spanCountry = document.createElement('span');
   spanCountry.className = 'country';
-  spanCountry.textContent = movie.Country; // ?
+  spanCountry.textContent = movie.Country;
   pCountry.appendChild(spanCountry);
 
   var pRated = document.createElement('p');
@@ -246,7 +255,7 @@ function singleMovieInfo(movie) {
   divColTwoThirdsDesk.appendChild(pRated);
   var spanRated = document.createElement('span');
   spanRated.className = 'rated';
-  spanRated.textContent = movie.Rated; // ?
+  spanRated.textContent = movie.Rated;
   pRated.appendChild(spanRated);
 
   var pRelease = document.createElement('p');
@@ -255,7 +264,7 @@ function singleMovieInfo(movie) {
   divColTwoThirdsDesk.appendChild(pRelease);
   var spanRelease = document.createElement('span');
   spanRelease.className = 'release';
-  spanRelease.textContent = movie.Released; // ?
+  spanRelease.textContent = movie.Released;
   pRelease.appendChild(spanRelease);
 
   var divRow2 = document.createElement('div');
@@ -267,12 +276,12 @@ function singleMovieInfo(movie) {
   divRow2.appendChild(divColFull);
 
   var h3Titile = document.createElement('h3');
-  h3Titile.className = 'movie-title';
+  h3Titile.className = 'movie-title modile-view';
   h3Titile.textContent = movie.Title;
   divColFull.appendChild(h3Titile);
 
   var pYear = document.createElement('p');
-  pYear.className = 'year';
+  pYear.className = 'year modile-view';
   pYear.textContent = '(' + movie.Year + ')';
   divColFull.appendChild(pYear);
 

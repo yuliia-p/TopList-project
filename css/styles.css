@@ -194,6 +194,10 @@ img {
   background-color: #fe5f55;
 }
 
+.desktop-view {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   body {
     font-size: larger;
@@ -271,7 +275,7 @@ img {
     font-size: xx-large;
   }
 
-  h3.movie-title {
+  h2.movie-title {
     margin: 10px 0 5px;
   }
 
@@ -295,10 +299,6 @@ img {
     padding: 15px 30px;
     border: none;
     border-radius: 15px;
-
-    /* position: absolute;
-    bottom: 10px;
-    right: 10px; */
     margin: 0 10px 10px 0;
   }
 
@@ -309,7 +309,13 @@ img {
 
   .delete-button {
     text-align: right;
+  }
 
-    /* position: relative; */
+  .modile-view {
+    display: none;
+  }
+
+  .desktop-view {
+    display: block;
   }
 }
