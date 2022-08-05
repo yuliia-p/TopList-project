@@ -1,6 +1,8 @@
 /* exported data */
 var data = {
-  movies: []
+  savedMovies: [],
+  allMovies: [],
+  currentMovie: {}
 };
 
 var moviesJSON = localStorage.getItem('saved-movies-local-storage');
