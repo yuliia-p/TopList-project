@@ -58,7 +58,7 @@ function moviesList(movie) {
   pRating.style.color = '#FE5F55';
   divColTwoThirds.appendChild(pRating);
   var spanRating = document.createElement('span');
-  spanRating.className = 'rating';
+  spanRating.className = 'rating font-weight-100';
   spanRating.style.color = '#FE5F55';
   spanRating.textContent = movie.imDbRating;
   pRating.appendChild(spanRating);
@@ -68,7 +68,7 @@ function moviesList(movie) {
   pYear.textContent = 'Release year ';
   divColTwoThirds.appendChild(pYear);
   var spanYear = document.createElement('span');
-  spanYear.className = 'year';
+  spanYear.className = 'year font-weight-100';
   spanYear.textContent = movie.year;
   pYear.appendChild(spanYear);
 
@@ -77,7 +77,7 @@ function moviesList(movie) {
   pCrew.textContent = 'Crew ';
   divColTwoThirds.appendChild(pCrew);
   var spanCrew = document.createElement('span');
-  spanCrew.className = 'crew';
+  spanCrew.className = 'crew font-weight-100';
   spanCrew.textContent = movie.crew;
   pCrew.appendChild(spanCrew);
 
@@ -86,7 +86,7 @@ function moviesList(movie) {
   pRank.textContent = 'Rank ';
   divColTwoThirds.appendChild(pRank);
   var spanRank = document.createElement('span');
-  spanRank.className = 'rank';
+  spanRank.className = 'rank font-weight-100';
   spanRank.textContent = movie.rank;
   pRank.appendChild(spanRank);
 
@@ -209,7 +209,7 @@ function singleMovieInfo(movie) {
   pDirector.textContent = 'Director ';
   divColTwoThirdsDesk.appendChild(pDirector);
   var spanDirector = document.createElement('span');
-  spanDirector.className = 'director';
+  spanDirector.className = 'director font-weight-100';
   spanDirector.textContent = movie.Director;
   pDirector.appendChild(spanDirector);
 
@@ -218,7 +218,7 @@ function singleMovieInfo(movie) {
   pGenre.textContent = 'Genre ';
   divColTwoThirdsDesk.appendChild(pGenre);
   var spanGenre = document.createElement('span');
-  spanGenre.className = 'genre';
+  spanGenre.className = 'genre font-weight-100';
   spanGenre.textContent = movie.Genre;
   pGenre.appendChild(spanGenre);
 
@@ -227,7 +227,7 @@ function singleMovieInfo(movie) {
   pCast.textContent = 'Top Cast ';
   divColTwoThirdsDesk.appendChild(pCast);
   var spanCast = document.createElement('span');
-  spanCast.className = 'cast';
+  spanCast.className = 'cast font-weight-100';
   spanCast.textContent = movie.Actors;
   pCast.appendChild(spanCast);
 
@@ -236,7 +236,7 @@ function singleMovieInfo(movie) {
   pWriter.textContent = 'Writer ';
   divColTwoThirdsDesk.appendChild(pWriter);
   var spanWriter = document.createElement('span');
-  spanWriter.className = 'writer';
+  spanWriter.className = 'writer font-weight-100';
   spanWriter.textContent = movie.Writer;
   pWriter.appendChild(spanWriter);
 
@@ -245,7 +245,7 @@ function singleMovieInfo(movie) {
   pCountry.textContent = 'Country ';
   divColTwoThirdsDesk.appendChild(pCountry);
   var spanCountry = document.createElement('span');
-  spanCountry.className = 'country';
+  spanCountry.className = 'country font-weight-100';
   spanCountry.textContent = movie.Country;
   pCountry.appendChild(spanCountry);
 
@@ -254,7 +254,7 @@ function singleMovieInfo(movie) {
   pRated.textContent = 'Rated ';
   divColTwoThirdsDesk.appendChild(pRated);
   var spanRated = document.createElement('span');
-  spanRated.className = 'rated';
+  spanRated.className = 'rated font-weight-100';
   spanRated.textContent = movie.Rated;
   pRated.appendChild(spanRated);
 
@@ -263,7 +263,7 @@ function singleMovieInfo(movie) {
   pRelease.textContent = 'Release date ';
   divColTwoThirdsDesk.appendChild(pRelease);
   var spanRelease = document.createElement('span');
-  spanRelease.className = 'release';
+  spanRelease.className = 'release font-weight-100';
   spanRelease.textContent = movie.Released;
   pRelease.appendChild(spanRelease);
 
@@ -294,7 +294,7 @@ function singleMovieInfo(movie) {
   pPlot.className = 'plot';
   divColFull.appendChild(pPlot);
   var spanPlot = document.createElement('span');
-  spanPlot.className = 'plot';
+  spanPlot.className = 'plot font-weight-100';
   spanPlot.textContent = movie.Plot;
   pPlot.appendChild(spanPlot);
 
@@ -312,7 +312,7 @@ function singleMovieInfo(movie) {
 
   var addButton = document.createElement('button');
   addButton.setAttribute('type', 'button');
-  addButton.className = 'add-to-watchlist';
+  addButton.className = 'add-to-watchlist button-style';
   addButton.textContent = 'Add to Watchlist';
   divWatchList.appendChild(addButton);
   addButton.addEventListener('click', addMovie);
@@ -323,7 +323,7 @@ function singleMovieInfo(movie) {
 
   var removeButton = document.createElement('button');
   removeButton.setAttribute('type', 'button');
-  removeButton.className = 'delete-from-watchlist';
+  removeButton.className = 'delete-from-watchlist button-style';
   removeButton.textContent = 'Remove from Watchlist';
   removeDiv.appendChild(removeButton);
   removeButton.addEventListener('click', removeFromWatchlist);

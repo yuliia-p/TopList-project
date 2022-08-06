@@ -5,6 +5,10 @@ body {
   font-weight: bold;
 }
 
+img {
+  width: 100%;
+}
+
 .hidden {
   display: none;
 }
@@ -16,17 +20,13 @@ body {
   flex-wrap: nowrap;
 }
 
-.header > h3 {
-  margin-left: 11px;
-}
-
 .content-holder {
   background-color: #1e1e29;
-  border-radius: 10px;
+  border-radius: 0.65rem;
 }
 
 .margin {
-  margin: 11px 11px 0;
+  margin: 0.68rem 0.68rem 0;
 }
 
 .year,
@@ -36,8 +36,7 @@ body {
   margin: 0;
 }
 
-p > span,
-a {
+.font-weight-100 {
   font-weight: 100;
 }
 
@@ -48,7 +47,7 @@ span.rating {
 
 .movie-title,
 p.rating {
-  margin: 8px 0 5px;
+  margin: 0.5rem 0 0.3rem;
 }
 
 p {
@@ -67,25 +66,23 @@ p {
   font-size: x-small;
   color: white;
   background-color: #4f4f63;
-  padding: 10px 12px;
+  padding: 0.65rem 0.75rem;
   border: none;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   position: absolute;
-  bottom: 14px;
-  right: 14px;
+  bottom: 0.875rem;
+  right: 0.875rem;
 }
 
 img.single-movie-poster {
-  width: 100%;
-  padding-right: 10px;
+  padding-right: 0.65rem;
 }
 
 p.single-rating {
   font-weight: 400;
   text-align: end;
   color: #fe5f55;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin: 0.3rem 0;
 }
 
 span.single-rating {
@@ -94,15 +91,15 @@ span.single-rating {
 }
 
 .margin-line-spacing {
-  margin: 2px;
+  margin: 0.125rem;
 }
 
 .padding {
-  padding: 10px;
+  padding: 0.65rem;
 }
 
 .padding-left {
-  padding-left: 10px;
+  padding-left: 0.65rem;
 }
 
 .flex {
@@ -111,34 +108,18 @@ span.single-rating {
   justify-content: space-between;
 }
 
-img {
-  width: 100%;
-}
-
-.watchlist-button {
-  text-align: center;
-}
-
-.add-to-watchlist {
-  font-size: larger;
-  color: white;
-  background-color: #4f4f63;
-  padding: 20px 62px;
-  border: none;
-  border-radius: 15px;
-}
-
-.delete-from-watchlist {
-  font-size: larger;
-  color: white;
-  background-color: #4f4f63;
-  padding: 20px 62px;
-  border: none;
-  border-radius: 15px;
-}
-
+.watchlist-button,
 .delete-button {
   text-align: center;
+}
+
+.button-style {
+  font-size: larger;
+  color: white;
+  background-color: #4f4f63;
+  padding: 1.25rem 3.8rem;
+  border: none;
+  border-radius: 0.9rem;
 }
 
 .selected {
@@ -147,7 +128,7 @@ img {
 
 .space-between {
   justify-content: space-between;
-  margin: 0 20px;
+  margin: 0 1.25rem;
 }
 
 .modal {
@@ -167,27 +148,22 @@ img {
   font-size: x-large;
   background-color: #f7f7ff;
   width: auto;
-  margin: 0 30px;
-  padding: 20px 10px;
+  margin: 0 1.8rem;
+  padding: 1.25rem 0.65rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.65rem;
   text-align: center;
   font-weight: bold;
   position: relative;
-}
-
-.fa-regular {
-  color: #3d405b;
-  position: absolute;
 }
 
 .modal-button {
   font-size: 1rem;
   color: white;
   background-color: #4f4f63;
-  padding: 10px 25px;
+  padding: 0.65rem 1.5rem;
   border: none;
-  border-radius: 15px;
+  border-radius: 0.9rem;
 }
 
 .confirm-button {
@@ -198,22 +174,20 @@ img {
   display: none;
 }
 
+/* Desktop */
+
 @media screen and (min-width: 768px) {
   body {
     font-size: larger;
   }
 
-  .padding-left {
-    padding-left: 10px;
-  }
-
   .margin {
-    margin: 8px 0 1px;
+    margin: 0.5rem 0;
   }
 
   .rating {
     text-align: end;
-    font-size: x-small;
+    font-size: small;
   }
 
   span.rating {
@@ -221,7 +195,7 @@ img {
   }
 
   h4.movie-title {
-    margin-top: 40px;
+    margin-top: 2.5rem;
   }
 
   .year,
@@ -229,37 +203,33 @@ img {
   .movie-id,
   .rank,
   .rating {
-    padding-right: 7px;
-    margin-bottom: 5px;
+    padding-right: 0.43rem;
+    margin-bottom: 0.3rem;
   }
 
   .content-holder {
-    padding: 15px 25px;
+    padding: 0.9rem 1.5rem;
     background-color: #111118;
   }
 
   .row-content {
     background-color: #1e1e29;
-    border-radius: 10px;
+    border-radius: 0.65rem;
     position: relative;
   }
 
   .more-details-button {
-    border-radius: 19px;
+    border-radius: 1rem;
     font-size: medium;
-    padding: 15px 25px;
+    padding: 0.9rem 1.5rem;
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-  }
-
-  img.single-movie-poster {
-    width: 100%;
+    bottom: 1.25rem;
+    right: 1.25rem;
   }
 
   .backgroung-color {
     background-color: #1e1e29;
-    border-radius: 10px;
+    border-radius: 0.65rem;
   }
 
   span.single-rating {
@@ -268,7 +238,7 @@ img {
   }
 
   .margin-line-spacing {
-    margin: 8px 0;
+    margin: 0.5rem 0;
   }
 
   .header > h3 {
@@ -276,30 +246,20 @@ img {
   }
 
   h2.movie-title {
-    margin: 10px 0 5px;
+    margin: 0.65rem 0 0.3rem;
   }
 
   .watchlist-button {
     text-align: end;
   }
 
-  .add-to-watchlist {
+  .button-style {
     font-size: smaller;
     color: white;
     background-color: #4f4f63;
-    padding: 15px 30px;
+    padding: 0.9rem 1.8rem;
     border: none;
-    border-radius: 15px;
-  }
-
-  .delete-from-watchlist {
-    font-size: smaller;
-    color: white;
-    background-color: #4f4f63;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 15px;
-    margin: 0 10px 10px 0;
+    border-radius: 0.9rem;
   }
 
   .modal-content {
