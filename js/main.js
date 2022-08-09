@@ -130,7 +130,7 @@ function viewMoreDetails(event) {
 
   function getInfo(movieID) {
     var xhr2 = new XMLHttpRequest();
-    xhr2.open('GET', 'http://www.omdbapi.com/?' + 'i=' + movieID + '&apikey=b1862476&' + '&plot=full');
+    xhr2.open('GET', 'https://www.omdbapi.com/?' + 'i=' + movieID + '&apikey=b1862476&' + '&plot=full');
     xhr2.responseType = 'json';
     xhr2.addEventListener('load', function () {
       var detaliedMovie = singleMovieInfo(xhr2.response);
