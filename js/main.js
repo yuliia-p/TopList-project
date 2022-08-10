@@ -267,6 +267,19 @@ function singleMovieInfo(movie) {
   spanRelease.textContent = movie.Released;
   pRelease.appendChild(spanRelease);
 
+  var pStoryDesk = document.createElement('p');
+  pStoryDesk.className = 'storyline desktop-view';
+  pStoryDesk.textContent = 'Storyline';
+  divColTwoThirdsDesk.appendChild(pStoryDesk);
+
+  var pPlotDesk = document.createElement('p');
+  pPlotDesk.className = 'plot desktop-view';
+  divColTwoThirdsDesk.appendChild(pPlotDesk);
+  var spanPlotDesk = document.createElement('span');
+  spanPlotDesk.className = 'plot font-weight-100 desktop-view';
+  spanPlotDesk.textContent = movie.Plot;
+  pPlotDesk.appendChild(spanPlotDesk);
+
   var divRow2 = document.createElement('div');
   divRow.className = 'row';
   divBackColor.appendChild(divRow2);
@@ -286,15 +299,15 @@ function singleMovieInfo(movie) {
   divColFull.appendChild(pYear);
 
   var pStory = document.createElement('p');
-  pStory.className = 'storyline';
+  pStory.className = 'storyline mobile-view';
   pStory.textContent = 'Storyline';
   divColFull.appendChild(pStory);
 
   var pPlot = document.createElement('p');
-  pPlot.className = 'plot';
+  pPlot.className = 'plot mobile-view';
   divColFull.appendChild(pPlot);
   var spanPlot = document.createElement('span');
-  spanPlot.className = 'plot font-weight-100';
+  spanPlot.className = 'plot font-weight-100 mobile-view';
   spanPlot.textContent = movie.Plot;
   pPlot.appendChild(spanPlot);
 
