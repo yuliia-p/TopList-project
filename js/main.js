@@ -130,17 +130,17 @@ function viewMoreDetails(event) {
 
   function getInfo(movieID) {
     // debugger;
+    var loaderEl = document.querySelector('.loader');
+    loaderEl.classList.remove('hidden');
     var xhr2 = new XMLHttpRequest();
     xhr2.open('GET', 'http://www.omdbapi.com/?' + 'i=' + movieID + '&apikey=b1862476&' + '&plot=full');
     xhr2.responseType = 'json';
     xhr2.addEventListener('load', function () {
       // loader
-      var loaderEl = document.querySelector('.loader');
-      loaderEl.classList.remove('hidden');
-      setTimeout(showPage, 500);
-      function showPage() {
-        loaderEl.classList.add('hidden');
-      }
+      loaderEl.classList.add('hidden');
+      // setTimeout(showPage, 500);
+      // function showPage() {
+      // }
 
       var detaliedMovie = singleMovieInfo(xhr2.response);
       divMoreDetails.appendChild(detaliedMovie);
