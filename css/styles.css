@@ -20,6 +20,12 @@ img {
   flex-wrap: nowrap;
 }
 
+.position-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 .name {
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -74,7 +80,7 @@ p {
 }
 
 .more-details-button {
-  font-size: x-small;
+  font-size: small;
   color: white;
   background-color: #4f4f63;
   padding: 0.65rem 0.75rem;
@@ -295,7 +301,7 @@ a:hover {
   }
 
   h4.movie-title {
-    margin-top: 2.5rem;
+    margin-top: 1rem;
   }
 
   .year,
