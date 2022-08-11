@@ -74,6 +74,10 @@ p {
   right: 0.875rem;
 }
 
+.more-details-button:hover {
+  background-color: #111118;
+}
+
 img.single-movie-poster {
   padding-right: 0.65rem;
 }
@@ -122,6 +126,10 @@ span.single-rating {
   border-radius: 0.9rem;
 }
 
+.button-style:hover {
+  background-color: #111118;
+}
+
 .selected {
   font-weight: 700;
 }
@@ -147,8 +155,8 @@ span.single-rating {
   font-family: Inter, sans-serif;
   font-size: x-large;
   background-color: #f7f7ff;
-  width: auto;
-  margin: 0 1.8rem;
+  width: 80%;
+  margin: auto;
   padding: 1.25rem 0.65rem;
   border: none;
   border-radius: 0.65rem;
@@ -158,20 +166,100 @@ span.single-rating {
 }
 
 .modal-button {
+  background-color: #f7f7ff;
   font-size: 1rem;
-  color: white;
-  background-color: #4f4f63;
+  font-weight: 700;
   padding: 0.65rem 1.5rem;
   border: none;
   border-radius: 0.9rem;
 }
 
 .confirm-button {
+  color: #fe5f55;
+  border: #fe5f55 solid 0.2rem;
+}
+
+.cancel-button {
+  color: #3d405b;
+  border: #3d405b solid 0.2rem;
+}
+
+.confirm-button:hover {
+  color: white;
   background-color: #fe5f55;
+}
+
+.cancel-button:hover {
+  color: white;
+  background-color: #3d405b;
 }
 
 .desktop-view {
   display: none;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+a:hover {
+  color: #111118;
+  font-weight: 700;
+}
+
+.loader {
+  position: fixed;
+  padding-top: 15rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0 0 0 / 90%);
+  text-align: center;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Desktop */
@@ -181,13 +269,18 @@ span.single-rating {
     font-size: larger;
   }
 
+  .name {
+    padding-left: 3rem;
+  }
+
   .margin {
     margin: 0.5rem 0;
   }
 
   .rating {
     text-align: end;
-    font-size: small;
+
+    /* font-size: small; */
   }
 
   span.rating {
@@ -237,6 +330,10 @@ span.single-rating {
     font-weight: bold;
   }
 
+  p.single-rating {
+    margin-top: 1rem;
+  }
+
   .margin-line-spacing {
     margin: 0.5rem 0;
   }
@@ -263,7 +360,8 @@ span.single-rating {
   }
 
   .modal-content {
-    width: 30%;
+    width: 40%;
+    padding: 3rem;
     margin: auto;
   }
 

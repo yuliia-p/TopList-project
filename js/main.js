@@ -129,10 +129,19 @@ function viewMoreDetails(event) {
   }
 
   function getInfo(movieID) {
+    // debugger;
+    var loaderEl = document.querySelector('.loader');
+    loaderEl.classList.remove('hidden');
     var xhr2 = new XMLHttpRequest();
     xhr2.open('GET', 'https://www.omdbapi.com/?' + 'i=' + movieID + '&apikey=b1862476&' + '&plot=full');
     xhr2.responseType = 'json';
     xhr2.addEventListener('load', function () {
+      // loader
+      loaderEl.classList.add('hidden');
+      // setTimeout(showPage, 500);
+      // function showPage() {
+      // }
+
       var detaliedMovie = singleMovieInfo(xhr2.response);
       divMoreDetails.appendChild(detaliedMovie);
       for (var y = 0; y < data.savedMovies.length; y++) {
@@ -267,6 +276,19 @@ function singleMovieInfo(movie) {
   spanRelease.textContent = movie.Released;
   pRelease.appendChild(spanRelease);
 
+  var pStoryDesk = document.createElement('p');
+  pStoryDesk.className = 'storyline desktop-view';
+  pStoryDesk.textContent = 'Storyline';
+  divColTwoThirdsDesk.appendChild(pStoryDesk);
+
+  var pPlotDesk = document.createElement('p');
+  pPlotDesk.className = 'plot desktop-view';
+  divColTwoThirdsDesk.appendChild(pPlotDesk);
+  var spanPlotDesk = document.createElement('span');
+  spanPlotDesk.className = 'plot font-weight-100 desktop-view';
+  spanPlotDesk.textContent = movie.Plot;
+  pPlotDesk.appendChild(spanPlotDesk);
+
   var divRow2 = document.createElement('div');
   divRow.className = 'row';
   divBackColor.appendChild(divRow2);
@@ -286,15 +308,15 @@ function singleMovieInfo(movie) {
   divColFull.appendChild(pYear);
 
   var pStory = document.createElement('p');
-  pStory.className = 'storyline';
+  pStory.className = 'storyline mobile-view';
   pStory.textContent = 'Storyline';
   divColFull.appendChild(pStory);
 
   var pPlot = document.createElement('p');
-  pPlot.className = 'plot';
+  pPlot.className = 'plot mobile-view';
   divColFull.appendChild(pPlot);
   var spanPlot = document.createElement('span');
-  spanPlot.className = 'plot font-weight-100';
+  spanPlot.className = 'plot font-weight-100 mobile-view';
   spanPlot.textContent = movie.Plot;
   pPlot.appendChild(spanPlot);
 
