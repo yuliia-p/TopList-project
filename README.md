@@ -1,3 +1,3 @@
 # toplist-project
 
-A dynamic HTML, CSS, and JavaScript solo project.
+A web application for movie enthusiasts who want to watch or rewatch the best movies in cinema history.
