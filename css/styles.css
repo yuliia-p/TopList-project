@@ -279,6 +279,10 @@ a:hover {
   }
 }
 
+span.plot {
+  text-align: justify;
+}
+
 /* Desktop */
 
 @media screen and (min-width: 768px) {
