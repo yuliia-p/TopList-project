@@ -20,6 +20,17 @@ img {
   flex-wrap: nowrap;
 }
 
+.name {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding-left: 2rem;
+}
+
+span.name {
+  font-weight: 100;
+  padding: 0;
+}
+
 .content-holder {
   background-color: #1e1e29;
   border-radius: 0.65rem;
@@ -267,10 +278,6 @@ a:hover {
 @media screen and (min-width: 768px) {
   body {
     font-size: larger;
-  }
-
-  .name {
-    padding-left: 3rem;
   }
 
   .margin {
