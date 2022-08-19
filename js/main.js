@@ -6,9 +6,11 @@ var divWatchList = document.querySelector('.watchlist');
 var buttonAllMovies = document.querySelector('#movies-list');
 var aWatchlist = document.querySelector('#watchlist');
 var modal = document.querySelector('.modal');
+const nameClick = document.querySelector('.name-click');
 
 buttonAllMovies.addEventListener('click', viewAllMovies);
 aWatchlist.addEventListener('click', viewWatchlist);
+nameClick.addEventListener('click', () => { switchView('all-movies-list'); });
 
 function getMovies() {
   var xhr = new XMLHttpRequest();
@@ -395,6 +397,7 @@ function removeFromWatchlist(event) {
     cancelButton.addEventListener('click', function () {
       modal.classList.add('hidden');
     });
+
     var deleteButton = document.querySelector('.confirm-button');
     deleteButton.addEventListener('click', function () {
       for (var y = 0; y < data.savedMovies.length; y++) {
