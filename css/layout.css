@@ -31,7 +31,7 @@
   }
 
   .column-half {
-    flex-basis: 50%;
+    flex-basis: calc(100%/3);
   }
 
   .column-two-thirds {
