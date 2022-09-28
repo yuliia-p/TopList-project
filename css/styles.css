@@ -297,8 +297,6 @@ span.plot {
 
   .rating {
     text-align: end;
-
-    /* font-size: small; */
   }
 
   span.rating {
@@ -306,7 +304,10 @@ span.plot {
   }
 
   h4.movie-title {
+    cursor: pointer;
+    text-decoration: underline;
     margin-top: 1rem;
+    font-weight: 200;
   }
 
   .year,
@@ -330,12 +331,12 @@ span.plot {
   }
 
   .more-details-button {
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     font-size: medium;
-    padding: 0.9rem 1.5rem;
+    padding: 0.5rem;
     position: absolute;
-    bottom: 1.25rem;
-    right: 1.25rem;
+    bottom: 0.25rem;
+    right: 0.25rem;
   }
 
   .backgroung-color {

@@ -53,6 +53,7 @@ function moviesList(movie) {
   titleH4.className = 'movie-title';
   titleH4.textContent = movie.title;
   divColTwoThirds.appendChild(titleH4);
+  titleH4.addEventListener('click', viewMoreDetails);
 
   var pRating = document.createElement('p');
   pRating.className = 'rating';
@@ -117,7 +118,7 @@ function switchView(viewName) {
 function viewMoreDetails(event) {
   buttonAllMovies.classList.remove('selected');
 
-  if (event.target.tagName === 'BUTTON') {
+  if (event.target.tagName === 'BUTTON' || event.target.tagName === 'H4') {
     switchView('more-details');
     var closestDiv = event.target.closest('.content-holder');
     var movieID = closestDiv.getAttribute('data-movie-id');
@@ -131,19 +132,13 @@ function viewMoreDetails(event) {
   }
 
   function getInfo(movieID) {
-    // debugger;
     var loaderEl = document.querySelector('.loader');
     loaderEl.classList.remove('hidden');
     var xhr2 = new XMLHttpRequest();
     xhr2.open('GET', 'https://www.omdbapi.com/?' + 'i=' + movieID + '&apikey=b1862476&' + '&plot=full');
     xhr2.responseType = 'json';
     xhr2.addEventListener('load', function () {
-      // loader
       loaderEl.classList.add('hidden');
-      // setTimeout(showPage, 500);
-      // function showPage() {
-      // }
-
       var detaliedMovie = singleMovieInfo(xhr2.response);
       divMoreDetails.appendChild(detaliedMovie);
       for (var y = 0; y < data.savedMovies.length; y++) {
@@ -387,7 +382,6 @@ function viewWatchlist() {
 }
 
 function removeFromWatchlist(event) {
-
   if (event.target.matches('.delete-from-watchlist')) {
     modal.classList.remove('hidden');
     var closestDiv = event.target.closest('.content-holder');
