@@ -86,7 +86,7 @@ p {
   background-color: #4f4f63;
   padding: 0.65rem 0.75rem;
   border: none;
-  border-radius: 0.75rem;
+  border-radius: 0.4rem;
   position: absolute;
   bottom: 0.875rem;
   right: 0.875rem;
@@ -306,7 +306,6 @@ span.plot {
   h4.movie-title {
     cursor: pointer;
     text-decoration: underline;
-    margin-top: 1rem;
     font-weight: 200;
   }
 
@@ -320,7 +319,7 @@ span.plot {
   }
 
   .content-holder {
-    padding: 0.9rem 1.5rem;
+    padding: 0.25rem 0.8rem;
     background-color: #111118;
   }
 
