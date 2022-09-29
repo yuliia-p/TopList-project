@@ -291,6 +291,10 @@ span.plot {
     font-size: larger;
   }
 
+  h2.name {
+    margin-left: 3rem;
+  }
+
   .all-movies-list {
     margin: 0 20rem;
   }
