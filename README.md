@@ -15,5 +15,5 @@ ___
  
 ### Preview 
 <p align="middle">
-  <img src="Preview.gif">
+  <img src="Preview.gif" width="300">
 </p>
