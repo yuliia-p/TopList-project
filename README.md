@@ -1,5 +1,6 @@
 ## TopList project
 A web application for movie enthusiasts who want to watch or rewatch the best movies in cinema history.
+Try the application live [here](https://yuliia-p.github.io/toplist-project/)
 ___
 
 ### Using this application, user can:
@@ -17,6 +18,3 @@ ___
 <p align="middle">
   <img src="Preview.gif" width="300">
 </p>
-___
-
-### Try the application live [here](https://yuliia-p.github.io/toplist-project/)
