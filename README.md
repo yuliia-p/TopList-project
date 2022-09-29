@@ -15,7 +15,7 @@ ___
  
 ### Preview 
 <p align="middle">
-  <img src="./Preview.mov">
+  <img src="/Preview.mov">
 </p>
 
 https://user-images.githubusercontent.com/106217355/192907638-07001e53-4f6a-4147-85ab-85411820a785.mov
