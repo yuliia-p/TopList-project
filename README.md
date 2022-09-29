@@ -18,4 +18,5 @@ ___
   <img src="Preview.gif" width="300">
 </p>
 ___
+
 ### Try the application live [here](https://yuliia-p.github.io/toplist-project/)
