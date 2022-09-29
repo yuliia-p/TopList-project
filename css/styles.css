@@ -291,8 +291,16 @@ span.plot {
     font-size: larger;
   }
 
+  h2.name {
+    margin-left: 3rem;
+  }
+
   .all-movies-list {
-    margin: 0 10rem;
+    margin: 0 20rem;
+  }
+
+  .more-details {
+    margin: 0 15rem;
   }
 
   .margin {
@@ -350,6 +358,10 @@ span.plot {
 
   span.single-rating {
     font-size: x-large;
+  }
+
+  span.plot {
+    font-size: 0.9rem;
   }
 
   p.single-rating {
