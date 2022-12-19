@@ -313,8 +313,9 @@ span.plot {
   }
 
   .row-content {
-    margin: 0;
     text-align: center;
+    border: solid 1px rgb(187, 187, 187);
+    margin: 1rem;
   }
 
   img.margin-right {
@@ -327,6 +328,14 @@ span.plot {
 
   .desktop-view {
     display: contents;
+  }
+
+  .more-details-button {
+    /* border-radius: 0.5rem; */
+
+    /* font-size: medium; */
+    padding: 0.2rem;
+    margin: 0.7rem 0;
   }
 
   /*
@@ -440,7 +449,7 @@ span.plot {
 } */
   @media (min-width: 1024px) {
     .container {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 2rem auto 0;
     }
   }
