@@ -18,23 +18,21 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <header class="position-sticky">
     <div class="row header">
-      <div class="column-half">
-        <h2 class="padding name name-click" data-view="all-movies-list">TOP<span class="name">LIST</span></h2>
-      </div>
-      <div class="column-half">
-        <a
-        data-view="all-movies-list"
+      <h2 class="padding name name-click" data-view="all-movies-list">TOP<span class="name">LIST</span></h2>
+      <a data-view="all-movies-list"
         id="movies-list"
         class="padding selected font-weight-100">All Movies</a>
-        <a data-view="watchlist"
+      <a data-view="watchlist"
         id="watchlist"
         class="padding font-weight-100">My Watchlist</a>
-      </div>
     </div>
   </header>
   <main>

@@ -67,20 +67,20 @@ function moviesList(movie) {
   pRating.appendChild(spanRating);
 
   var pYear = document.createElement('p');
-  pYear.className = 'year';
-  pYear.textContent = 'Release year ';
+  pYear.className = 'year mobile-view';
+  pYear.textContent = 'Release year';
   divColTwoThirds.appendChild(pYear);
   var spanYear = document.createElement('span');
-  spanYear.className = 'year font-weight-100';
+  spanYear.className = 'year font-weight-100 mobile-view';
   spanYear.textContent = movie.year;
   pYear.appendChild(spanYear);
 
   var pCrew = document.createElement('p');
-  pCrew.className = 'crew';
+  pCrew.className = 'crew mobile-view ';
   pCrew.textContent = 'Crew ';
   divColTwoThirds.appendChild(pCrew);
   var spanCrew = document.createElement('span');
-  spanCrew.className = 'crew font-weight-100';
+  spanCrew.className = 'crew font-weight-100 mobile-view ';
   spanCrew.textContent = movie.crew;
   pCrew.appendChild(spanCrew);
 
@@ -287,7 +287,7 @@ function singleMovieInfo(movie) {
   pPlotDesk.appendChild(spanPlotDesk);
 
   var divRow2 = document.createElement('div');
-  divRow.className = 'row';
+  divRow.className = 'row info padding';
   divBackColor.appendChild(divRow2);
 
   var divColFull = document.createElement('div');
