@@ -241,66 +241,6 @@ p.single-rating {
   margin: 0.3rem 0;
 }
 
-/* .movie-title,
-
-
-
-
-
-
-span.single-rating {
-  font-size: larger;
-  font-weight: bold;
-}
-
-.margin-line-spacing {
-  margin: 0.125rem;
-}
-
-.padding {
-  padding: 0.65rem;
-}
-
-
-
-
-
-.button-style:hover {
-  background-color: #111118;
-}
-
-.space-between {
-  justify-content: space-between;
-  margin: 0 1.25rem;
-}
-
-button,
-a {
-  cursor: pointer;
-}
-
-*/
-
-/* .padding-left {
-  padding-left: 0.65rem;
-} */
-span.plot {
-  text-align: justify;
-}
-
-a:hover {
-  color: white;
-  font-weight: 700;
-}
-
-.mobile-view {
-  display: block;
-}
-
-.desktop-view {
-  display: none;
-}
-
 /* Desktop */
 
 @media screen and (min-width: 768px) {
