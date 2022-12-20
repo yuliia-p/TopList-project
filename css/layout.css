@@ -23,7 +23,6 @@
 
 @media screen and (min-width: 768px) {
   .row {
-    /* align-items: baseline; */
     justify-content: space-around;
     align-content: center;
   }
@@ -33,7 +32,6 @@
   }
 
   .column-two-thirds {
-    /* flex-basis: 64%; */
     flex-basis: 100%;
   }
 
