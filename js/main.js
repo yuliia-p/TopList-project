@@ -287,7 +287,7 @@ function singleMovieInfo(movie) {
   pPlotDesk.appendChild(spanPlotDesk);
 
   var divRow2 = document.createElement('div');
-  divRow.className = 'row';
+  divRow.className = 'row info padding';
   divBackColor.appendChild(divRow2);
 
   var divColFull = document.createElement('div');

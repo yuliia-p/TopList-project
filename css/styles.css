@@ -1,5 +1,6 @@
 body {
-  font-family: Inter, sans-serif;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
 
   /* color: white;
   background-color: #111118; */
@@ -85,6 +86,7 @@ img {
   }
 }
 
+a,
 .name {
   cursor: pointer;
 }
@@ -101,6 +103,14 @@ span.name {
 .rank,
 .rating {
   margin: 0;
+}
+
+.year,
+.crew,
+.movie-id,
+.rank,
+.rating {
+  font-size: 0.9rem;
 }
 
 .font-weight-100 {
@@ -163,7 +173,7 @@ span.name {
 }
 
 img.single-movie-poster {
-  padding: 0.65rem;
+  padding: 1rem;
 }
 
 div.padding {
@@ -175,30 +185,59 @@ div.padding {
   text-align: center;
 }
 
-/* .content-holder {
-  background-color: #e2e2e2;
-  border-radius: 0.65rem;
-} */
-
-/*
-
 span.rating {
   font-size: larger;
   font-weight: bold;
 }
 
-.movie-title,
-p.rating {
-  margin: 0.5rem 0 0.3rem;
+.more-details-button {
+  padding: 0.3rem;
+  border: solid 2px #352323;
+  background-color: white;
+  color: #352323;
+  cursor: pointer;
 }
 
 p {
   font-size: smaller;
 }
 
+.flex {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.selected {
+  font-weight: 700;
+}
+
 .more-button {
   text-align: end;
 }
+
+.info {
+  display: flex;
+  display: block;
+}
+
+.button-style {
+  font-size: large;
+  padding: 1.25rem 3.3rem;
+  border: solid 2px #352323;
+  background-color: white;
+  color: #352323;
+  cursor: pointer;
+}
+
+/* .movie-title,
+p.rating {
+  margin: 0.5rem 0 0.3rem;
+}
+
+*/
+
+/*
 
 .row-content {
   position: relative;
@@ -220,8 +259,6 @@ p {
   background-color: #111118;
 }
 
-
-
 p.single-rating {
   font-weight: 400;
   text-align: end;
@@ -242,32 +279,12 @@ span.single-rating {
   padding: 0.65rem;
 }
 
-.padding-left {
-  padding-left: 0.65rem;
-}
-
-.flex {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-}
 
 
-.button-style {
-  font-size: larger;
-  color: white;
-  background-color: #4f4f63;
-  padding: 1.25rem 3.8rem;
-  border: none;
-  border-radius: 0.6rem;
-}
+
 
 .button-style:hover {
   background-color: #111118;
-}
-
-.selected {
-  font-weight: 700;
 }
 
 .space-between {
@@ -275,36 +292,34 @@ span.single-rating {
   margin: 0 1.25rem;
 }
 
-
-
-.desktop-view {
-  display: none;
-}
-
 button,
 a {
   cursor: pointer;
 }
 
-a:hover {
-  color: #111118;
-  font-weight: 700;
-}
+*/
 
-
+/* .padding-left {
+  padding-left: 0.65rem;
+} */
 span.plot {
   text-align: justify;
 }
-*/
 
-/* Desktop */
+a:hover {
+  color: white;
+  font-weight: 700;
+}
+
 .mobile-view {
-  display: contents;
+  display: block;
 }
 
 .desktop-view {
   display: none;
 }
+
+/* Desktop */
 
 @media screen and (min-width: 768px) {
   .container {
@@ -312,9 +327,21 @@ span.plot {
     margin: 2rem auto 0;
   }
 
+  .more-button {
+    text-align: center;
+  }
+
+  .button-style {
+    font-size: 1rem;
+    padding: 0.9rem 1.8rem;
+  }
+
   .row-content {
+    width: 240px;
+    height: 347px;
     text-align: center;
     border: solid 1px rgb(187, 187, 187);
+    border-radius: 5px;
     margin: 1rem;
   }
 
@@ -330,12 +357,44 @@ span.plot {
     display: contents;
   }
 
+  .info {
+    display: flex;
+  }
+
   .more-details-button {
     /* border-radius: 0.5rem; */
 
     /* font-size: medium; */
-    padding: 0.2rem;
-    margin: 0.7rem 0;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border: none;
+    background-color: #352323;
+    color: white;
+    cursor: pointer;
+  }
+
+  h4.movie-title {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  span.single-rating {
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+  .delete-button {
+    text-align: end;
+  }
+
+  .watchlist-button {
+    text-align: end;
+  }
+
+  .modal-content {
+    width: 40%;
+    padding: 1.5rem;
+    margin: auto;
   }
 
   /*
@@ -379,30 +438,14 @@ span.plot {
     background-color: #111118;
   }
 
-  .row-content {
-    background-color: #1e1e29;
-    border-radius: 0.65rem;
-    position: relative;
-  }
 
-  .more-details-button {
-    border-radius: 0.5rem;
-    font-size: medium;
-    padding: 0.5rem;
-    position: absolute;
-    bottom: 0.25rem;
-    right: 0.25rem;
-  }
 
   .backgroung-color {
     background-color: #1e1e29;
     border-radius: 0.65rem;
   }
 
-  span.single-rating {
-    font-size: x-large;
-    font-weight: bold;
-  }
+
 
   p.single-rating {
     margin-top: 1rem;
@@ -420,28 +463,19 @@ span.plot {
     margin: 0.65rem 0 0.3rem;
   }
 
-  .watchlist-button {
-    text-align: end;
-  }
+
 
   .button-style {
     font-size: smaller;
     color: white;
     background-color: #4f4f63;
-    padding: 0.9rem 1.8rem;
+    c
     border: none;
     border-radius: 0.9rem;
   }
 
-  .modal-content {
-    width: 40%;
-    padding: 3rem;
-    margin: auto;
-  }
 
-  .delete-button {
-    text-align: right;
-  }
+
 
 
 
