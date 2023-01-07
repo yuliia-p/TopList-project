@@ -1,9 +1,15 @@
-body {
-  font-family: Montserrat, sans-serif;
-  font-weight: 400;
+@import "https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300&family=Josefin+Sans:wght@100;300;400;600&family=Poppins:wght@400;500;600;700&display=swap";
 
-  /* color: white;
-  background-color: #111118; */
+body {
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+
+  /* background-color: rgba(232, 249, 255, 0.936); */
+
+  /* color: white; */
+
+  /* padding: 1.5rem; */
+  font-size: 16px;
 }
 
 .row-content {
@@ -20,7 +26,7 @@ img {
 
 .header {
   font-size: smaller;
-  background-color: #352323;
+  background-color: black;
   align-items: center;
   flex-wrap: nowrap;
   color: white;
@@ -192,9 +198,14 @@ span.rating {
 
 .more-details-button {
   padding: 0.3rem;
-  border: solid 2px #352323;
+  border: solid 2px #000;
+
+  /* box-shadow: 0 8px 2px 2px rgba(0, 0, 0, 0.11); */
+
   background-color: white;
-  color: #352323;
+
+  /* background: linear-gradient(135deg, #e66465, #9198e5); */
+  color: #000;
   cursor: pointer;
 }
 
@@ -232,7 +243,7 @@ p {
 
 .more-details-button:hover {
   color: white;
-  background-color: #352323;
+  background-color: #000;
 }
 
 p.single-rating {
@@ -242,8 +253,15 @@ p.single-rating {
 }
 
 /* Desktop */
+.desktop-view {
+  display: none;
+}
 
 @media screen and (min-width: 768px) {
+  body {
+    /* background-color: rgb(23, 23, 23); */
+  }
+
   .container {
     max-width: 700px;
     margin: 2rem auto 0;
@@ -255,6 +273,7 @@ p.single-rating {
 
   .more-button {
     text-align: center;
+    position: relative;
   }
 
   .button-style {
@@ -263,10 +282,11 @@ p.single-rating {
   }
 
   .row-content {
-    width: 240px;
+    width: 260px;
     height: 347px;
     text-align: center;
-    border: solid 1px rgb(187, 187, 187);
+    border: solid 2px rgb(0, 0, 0);
+    background-color: white;
     border-radius: 5px;
     margin: 1rem;
   }
@@ -289,18 +309,29 @@ p.single-rating {
 
   .more-details-button {
     /* border-radius: 0.5rem; */
+    border-radius: 5px;
+
+    /* position: absolute;
+    bottom: 1rem; */
 
     /* font-size: medium; */
     padding: 0.5rem;
     margin-top: 1rem;
-    border: none;
-    background-color: #352323;
-    color: white;
+
+    /* border: none; */
+    border: solid 2px #000;
+
+    /* background-color: #000; */
+    color: rgb(0, 0, 0);
     cursor: pointer;
   }
 
   h4.movie-title {
     cursor: pointer;
+  }
+
+  a:hover,
+  h4.movie-title:hover {
     text-decoration: underline;
   }
 
@@ -311,6 +342,15 @@ p.single-rating {
 
   .delete-button {
     text-align: end;
+  }
+
+  .delete-from-watchlist {
+    border-radius: 5px;
+  }
+
+  .delete-from-watchlist:hover {
+    background-color: #000;
+    color: white;
   }
 
   .watchlist-button {
