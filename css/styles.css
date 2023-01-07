@@ -235,12 +235,14 @@ p {
 .button-style {
   font-size: large;
   padding: 1.25rem 3.3rem;
-  border: solid 2px #352323;
+  border: solid 2px #000;
   background-color: white;
-  color: #352323;
+  color: #000;
   cursor: pointer;
+  border-radius: 5px;
 }
 
+.button-style:hover,
 .more-details-button:hover {
   color: white;
   background-color: #000;
