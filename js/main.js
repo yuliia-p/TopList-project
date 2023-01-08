@@ -134,12 +134,12 @@ function viewMoreDetails(event) {
   function getInfo(movieID) {
     var loaderEl = document.querySelector('.loader');
     loaderEl.classList.remove('hidden');
-    var xhr2 = new XMLHttpRequest();
-    xhr2.open('GET', 'https://www.omdbapi.com/?' + 'i=' + movieID + '&apikey=b1862476&' + '&plot=full');
-    xhr2.responseType = 'json';
-    xhr2.addEventListener('load', function () {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://www.omdbapi.com/?' + 'i=' + movieID + '&apikey=b1862476&' + '&plot=full');
+    xhr.responseType = 'json';
+    xhr.addEventListener('load', function () {
       loaderEl.classList.add('hidden');
-      var detaliedMovie = singleMovieInfo(xhr2.response);
+      var detaliedMovie = singleMovieInfo(xhr.response);
       divMoreDetails.appendChild(detaliedMovie);
       for (var y = 0; y < data.savedMovies.length; y++) {
         if (data.savedMovies[y].id === movieID) {
@@ -151,7 +151,7 @@ function viewMoreDetails(event) {
         }
       }
     });
-    xhr2.send();
+    xhr.send();
   }
   divMoreDetails.replaceChildren();
 }
@@ -357,15 +357,15 @@ function addMovie(event) {
     getInfo(movieID);
   }
   function getInfo(movieID) {
-    var xhr2 = new XMLHttpRequest();
-    xhr2.open('GET', 'https://www.omdbapi.com/?' + 'i=' + movieID + '&apikey=b1862476&' + '&plot=full');
-    xhr2.responseType = 'json';
-    xhr2.addEventListener('load', function () {
-      movie = Object.assign(data.currentMovie, xhr2.response);
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://www.omdbapi.com/?' + 'i=' + movieID + '&apikey=b1862476&' + '&plot=full');
+    xhr.responseType = 'json';
+    xhr.addEventListener('load', function () {
+      movie = Object.assign(data.currentMovie, xhr.response);
       data.savedMovies.push(movie);
       viewWatchlist();
     });
-    xhr2.send();
+    xhr.send();
   }
 }
 
