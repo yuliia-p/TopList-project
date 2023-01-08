@@ -254,16 +254,12 @@ p.single-rating {
   margin: 0.3rem 0;
 }
 
-/* Desktop */
 .desktop-view {
   display: none;
 }
 
+/* Desktop */
 @media screen and (min-width: 768px) {
-  body {
-    /* background-color: rgb(23, 23, 23); */
-  }
-
   .container {
     max-width: 700px;
     margin: 2rem auto 0;
@@ -311,20 +307,10 @@ p.single-rating {
   }
 
   .more-details-button {
-    /* border-radius: 0.5rem; */
     border-radius: 5px;
-
-    /* position: absolute;
-    bottom: 1rem; */
-
-    /* font-size: medium; */
     padding: 0.5rem;
     margin-top: 1rem;
-
-    /* border: none; */
     border: solid 2px #000;
-
-    /* background-color: #000; */
     color: rgb(0, 0, 0);
     cursor: pointer;
     box-shadow: 0 2px 2px 2px rgb(0 0 0 / 11%);
