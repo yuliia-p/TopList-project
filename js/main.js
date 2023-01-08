@@ -68,7 +68,7 @@ function moviesList(movie) {
 
   var pYear = document.createElement('p');
   pYear.className = 'year mobile-view';
-  pYear.textContent = 'Release year';
+  pYear.textContent = 'Release year: ';
   divColTwoThirds.appendChild(pYear);
   var spanYear = document.createElement('span');
   spanYear.className = 'year font-weight-100 mobile-view';
@@ -77,7 +77,7 @@ function moviesList(movie) {
 
   var pCrew = document.createElement('p');
   pCrew.className = 'crew mobile-view ';
-  pCrew.textContent = 'Crew ';
+  pCrew.textContent = 'Crew: ';
   divColTwoThirds.appendChild(pCrew);
   var spanCrew = document.createElement('span');
   spanCrew.className = 'crew font-weight-100 mobile-view ';
@@ -86,7 +86,7 @@ function moviesList(movie) {
 
   var pRank = document.createElement('p');
   pRank.className = 'rank';
-  pRank.textContent = 'Rank ';
+  pRank.textContent = 'Rank: ';
   divColTwoThirds.appendChild(pRank);
   var spanRank = document.createElement('span');
   spanRank.className = 'rank font-weight-100';
@@ -212,7 +212,7 @@ function singleMovieInfo(movie) {
 
   var pDirector = document.createElement('p');
   pDirector.className = 'director margin-line-spacing';
-  pDirector.textContent = 'Director ';
+  pDirector.textContent = 'Director: ';
   divColTwoThirdsDesk.appendChild(pDirector);
   var spanDirector = document.createElement('span');
   spanDirector.className = 'director font-weight-100';
@@ -221,7 +221,7 @@ function singleMovieInfo(movie) {
 
   var pGenre = document.createElement('p');
   pGenre.className = 'genre margin-line-spacing';
-  pGenre.textContent = 'Genre ';
+  pGenre.textContent = 'Genre: ';
   divColTwoThirdsDesk.appendChild(pGenre);
   var spanGenre = document.createElement('span');
   spanGenre.className = 'genre font-weight-100';
@@ -230,7 +230,7 @@ function singleMovieInfo(movie) {
 
   var pCast = document.createElement('p');
   pCast.className = 'cast margin-line-spacing';
-  pCast.textContent = 'Top Cast ';
+  pCast.textContent = 'Top Cast: ';
   divColTwoThirdsDesk.appendChild(pCast);
   var spanCast = document.createElement('span');
   spanCast.className = 'cast font-weight-100';
@@ -239,7 +239,7 @@ function singleMovieInfo(movie) {
 
   var pWriter = document.createElement('p');
   pWriter.className = 'writer margin-line-spacing';
-  pWriter.textContent = 'Writer ';
+  pWriter.textContent = 'Writer: ';
   divColTwoThirdsDesk.appendChild(pWriter);
   var spanWriter = document.createElement('span');
   spanWriter.className = 'writer font-weight-100';
@@ -248,7 +248,7 @@ function singleMovieInfo(movie) {
 
   var pCountry = document.createElement('p');
   pCountry.className = 'country margin-line-spacing';
-  pCountry.textContent = 'Country ';
+  pCountry.textContent = 'Country: ';
   divColTwoThirdsDesk.appendChild(pCountry);
   var spanCountry = document.createElement('span');
   spanCountry.className = 'country font-weight-100';
@@ -257,7 +257,7 @@ function singleMovieInfo(movie) {
 
   var pRated = document.createElement('p');
   pRated.className = 'rated margin-line-spacing';
-  pRated.textContent = 'Rated ';
+  pRated.textContent = 'Rated: ';
   divColTwoThirdsDesk.appendChild(pRated);
   var spanRated = document.createElement('span');
   spanRated.className = 'rated font-weight-100';
@@ -266,7 +266,7 @@ function singleMovieInfo(movie) {
 
   var pRelease = document.createElement('p');
   pRelease.className = 'release margin-line-spacing';
-  pRelease.textContent = 'Release date ';
+  pRelease.textContent = 'Release date: ';
   divColTwoThirdsDesk.appendChild(pRelease);
   var spanRelease = document.createElement('span');
   spanRelease.className = 'release font-weight-100';
@@ -275,7 +275,7 @@ function singleMovieInfo(movie) {
 
   var pStoryDesk = document.createElement('p');
   pStoryDesk.className = 'storyline desktop-view';
-  pStoryDesk.textContent = 'Storyline';
+  pStoryDesk.textContent = 'Storyline: ';
   divColTwoThirdsDesk.appendChild(pStoryDesk);
 
   var pPlotDesk = document.createElement('p');
@@ -306,7 +306,7 @@ function singleMovieInfo(movie) {
 
   var pStory = document.createElement('p');
   pStory.className = 'storyline mobile-view';
-  pStory.textContent = 'Storyline';
+  pStory.textContent = 'Storyline: ';
   divColFull.appendChild(pStory);
 
   var pPlot = document.createElement('p');
