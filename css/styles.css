@@ -3,13 +3,9 @@
 body {
   box-sizing: border-box;
   font-family: Poppins, sans-serif;
-
-  /* background-color: rgba(232, 249, 255, 0.936); */
-
-  /* color: white; */
-
-  /* padding: 1.5rem; */
+  background-color: #e2dadb;
   font-size: 16px;
+  color: #504e4e;
 }
 
 .row-content {
@@ -26,7 +22,7 @@ img {
 
 .header {
   font-size: smaller;
-  background-color: black;
+  background-color: #6d696a;
   align-items: center;
   flex-wrap: nowrap;
   color: white;
@@ -36,6 +32,10 @@ img {
   position: sticky;
   top: 0;
   z-index: 10;
+}
+
+.more-details {
+  color: #6d696a;
 }
 
 .loader {
@@ -197,16 +197,12 @@ span.rating {
 }
 
 .more-details-button {
-  padding: 0.3rem;
-  border: solid 2px #000;
-
-  /* box-shadow: 0 8px 2px 2px rgba(0, 0, 0, 0.11); */
-
+  padding: 0.46rem;
+  border: solid 1px #6d696a;
   background-color: white;
-
-  /* background: linear-gradient(135deg, #e66465, #9198e5); */
-  color: #000;
+  color: #6d696a;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 p {
@@ -235,9 +231,9 @@ p {
 .button-style {
   font-size: large;
   padding: 1.25rem 3.3rem;
-  border: solid 2px #000;
+  border: solid 2px #6d696a;
   background-color: white;
-  color: #000;
+  color: #6d696a;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -245,7 +241,7 @@ p {
 .button-style:hover,
 .more-details-button:hover {
   color: white;
-  background-color: #000;
+  background-color: #6d696a;
 }
 
 p.single-rating {
@@ -279,15 +275,17 @@ p.single-rating {
     padding: 0.9rem 1.8rem;
   }
 
+  .content-holder {
+    color: #504e4e;
+  }
+
   .row-content {
     width: 260px;
     height: 347px;
     text-align: center;
-    border: solid 2px rgb(0, 0, 0);
     background-color: white;
     border-radius: 5px;
     margin: 1rem;
-    box-shadow: 0 5px 2px 2px rgb(0 0 0 / 11%);
   }
 
   img.margin-right {
@@ -304,16 +302,17 @@ p.single-rating {
 
   .info {
     display: flex;
+    background-color: white;
+    border-radius: 15px;
   }
 
   .more-details-button {
     border-radius: 5px;
     padding: 0.5rem;
     margin-top: 1rem;
-    border: solid 2px #000;
-    color: rgb(0, 0, 0);
+    border: solid 2px #6d696a;
+    color: #504e4e;
     cursor: pointer;
-    box-shadow: 0 2px 2px 2px rgb(0 0 0 / 11%);
   }
 
   h4.movie-title {
@@ -339,7 +338,7 @@ p.single-rating {
   }
 
   .delete-from-watchlist:hover {
-    background-color: #000;
+    background-color: #6d696a;
     color: white;
   }
 
@@ -348,8 +347,8 @@ p.single-rating {
   }
 
   .modal-content {
-    width: 40%;
-    padding: 1.5rem;
+    width: 30%;
+    padding: 3rem;
     margin: auto;
   }
 }
