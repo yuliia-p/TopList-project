@@ -10,6 +10,27 @@ body {
 
   /* padding: 1.5rem; */
   font-size: 16px;
+  color: #bfc3ba;
+}
+
+.gradient {
+  background: linear-gradient(267deg, #a9aca9, #60495a, #2f2235);
+  background-size: 400% 400%;
+  animation: gradient-bg 20s ease infinite;
+}
+
+@keyframes gradient-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .row-content {
@@ -26,7 +47,7 @@ img {
 
 .header {
   font-size: smaller;
-  background-color: black;
+  background-color: #3f3244;
   align-items: center;
   flex-wrap: nowrap;
   color: white;
@@ -36,6 +57,10 @@ img {
   position: sticky;
   top: 0;
   z-index: 10;
+}
+
+.more-details {
+  color: #bfc3ba;
 }
 
 .loader {
@@ -283,11 +308,13 @@ p.single-rating {
     width: 260px;
     height: 347px;
     text-align: center;
-    border: solid 2px rgb(0, 0, 0);
-    background-color: white;
+
+    /* border: solid 2px rgb(0, 0, 0); */
+    background-color: #60495a;
     border-radius: 5px;
     margin: 1rem;
-    box-shadow: 0 5px 2px 2px rgb(0 0 0 / 11%);
+
+    /* box-shadow: 0 5px 2px 2px rgb(0 0 0 / 11%); */
   }
 
   img.margin-right {
@@ -348,8 +375,8 @@ p.single-rating {
   }
 
   .modal-content {
-    width: 40%;
-    padding: 1.5rem;
+    width: 30%;
+    padding: 3rem;
     margin: auto;
   }
 }
