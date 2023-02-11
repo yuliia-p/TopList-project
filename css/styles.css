@@ -3,16 +3,17 @@
 body {
   box-sizing: border-box;
   font-family: Poppins, sans-serif;
-
-  /* background-color: rgba(232, 249, 255, 0.936); */
+  background-color: #fff;
 
   /* color: white; */
 
   /* padding: 1.5rem; */
   font-size: 16px;
-  color: #bfc3ba;
+
+  /* color: #6d696a; */
 }
 
+/*
 .gradient {
   background: linear-gradient(267deg, #a9aca9, #60495a, #2f2235);
   background-size: 400% 400%;
@@ -31,7 +32,7 @@ body {
   100% {
     background-position: 0% 50%;
   }
-}
+} */
 
 .row-content {
   margin: 1rem 0 0;
@@ -47,7 +48,7 @@ img {
 
 .header {
   font-size: smaller;
-  background-color: #3f3244;
+  background-color: #6d696a;
   align-items: center;
   flex-wrap: nowrap;
   color: white;
@@ -304,13 +305,17 @@ p.single-rating {
     padding: 0.9rem 1.8rem;
   }
 
+  .content-holder {
+    color: #504e4e;
+  }
+
   .row-content {
     width: 260px;
     height: 347px;
     text-align: center;
 
     /* border: solid 2px rgb(0, 0, 0); */
-    background-color: #60495a;
+    background-color: #dae2df;
     border-radius: 5px;
     margin: 1rem;
 
@@ -337,10 +342,11 @@ p.single-rating {
     border-radius: 5px;
     padding: 0.5rem;
     margin-top: 1rem;
-    border: solid 2px #000;
-    color: rgb(0, 0, 0);
+    border: solid 2px #6d696a;
+    color: #504e4e;
     cursor: pointer;
-    box-shadow: 0 2px 2px 2px rgb(0 0 0 / 11%);
+
+    /* box-shadow: 0 2px 2px 2px rgb(0 0 0 / 11%); */
   }
 
   h4.movie-title {
