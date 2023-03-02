@@ -1,8 +1,8 @@
-@import "https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300&family=Josefin+Sans:wght@100;300;400;600&family=Poppins:wght@400;500;600;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700&display=swap";
 
 body {
   box-sizing: border-box;
-  font-family: Poppins, sans-serif;
+  font-family: Inter, sans-serif;
   background-color: #111118;
   font-size: 16px;
   color: white;
@@ -41,10 +41,6 @@ img {
   position: sticky;
   top: 0;
   z-index: 10;
-}
-
-.more-details {
-  color: #6d696a;
 }
 
 .loader {
@@ -207,11 +203,12 @@ span.rating {
 
 .more-details-button {
   padding: 0.46rem;
-  border: solid 1px #6d696a;
-  background-color: white;
-  color: #6d696a;
+  border: none;
+  background-color: #4f4f63;
+  color: white;
   cursor: pointer;
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 p {
@@ -240,17 +237,17 @@ p {
 .button-style {
   font-size: large;
   padding: 1.25rem 3.3rem;
-  border: solid 2px #6d696a;
-  background-color: white;
-  color: #6d696a;
+  border: solid 2px #4f4f63;
+  background-color: #4f4f63;
+  color: white;
   cursor: pointer;
   border-radius: 5px;
 }
 
 .button-style:hover,
 .more-details-button:hover {
-  color: white;
-  background-color: #6d696a;
+  color: #4f4f63;
+  background-color: white;
 }
 
 p.single-rating {
@@ -286,6 +283,7 @@ p.single-rating {
   .row-content {
     width: 260px;
     height: 347px;
+    font-size: 1.2rem;
     text-align: center;
     color: white;
     background-color: #1e1e29;
@@ -307,16 +305,20 @@ p.single-rating {
 
   .info {
     display: flex;
-    background-color: white;
+    color: white;
+    font-size: 1.2rem;
+    background-color: #1e1e29;
     border-radius: 15px;
   }
 
   .more-details-button {
     border-radius: 5px;
-    padding: 0.5rem;
+    padding: 1rem 0;
+    font-size: 1.15rem;
+    width: 60%;
     margin-top: 1rem;
-    border: solid 2px #6d696a;
-    color: #504e4e;
+    border: none;
+    color: white;
     cursor: pointer;
   }
 
@@ -340,10 +342,7 @@ p.single-rating {
 
   .delete-from-watchlist {
     border-radius: 5px;
-  }
-
-  .delete-from-watchlist:hover {
-    background-color: #6d696a;
+    background-color: #4f4f63;
     color: white;
   }
 
@@ -356,11 +355,4 @@ p.single-rating {
     padding: 3rem;
     margin: auto;
   }
-}
-
-@media (min-width: 1024px) {
-  /* .container {
-    max-width: 1200px;
-    margin: 2rem auto 0;
-  } */
 }
