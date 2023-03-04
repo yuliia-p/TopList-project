@@ -309,17 +309,23 @@ p.single-rating {
     font-size: 1.2rem;
     background-color: #1e1e29;
     border-radius: 15px;
+    padding: 0;
   }
 
   .more-details-button {
     border-radius: 5px;
     padding: 1rem 0;
-    font-size: 1.15rem;
+    font-size: 0.85rem;
     width: 60%;
     margin-top: 1rem;
     border: none;
     color: white;
     cursor: pointer;
+  }
+
+  div.more-details {
+    width: 60%;
+    margin: auto;
   }
 
   h4.movie-title {
