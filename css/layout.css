@@ -47,6 +47,10 @@
   .column-two-thirds-desktop {
     flex-basis: 64%;
   }
+
+  div.info {
+    align-items: center;
+  }
 }
 
 @media (min-width: 1024px) {
