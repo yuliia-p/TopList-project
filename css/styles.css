@@ -281,7 +281,7 @@ p.single-rating {
   }
 
   .row-content {
-    width: 260px;
+    width: 230px;
     height: 347px;
     font-size: 1.2rem;
     text-align: center;
@@ -301,6 +301,10 @@ p.single-rating {
 
   .desktop-view {
     display: contents;
+  }
+
+  img.single-movie-poster {
+    padding: 0;
   }
 
   .info {
@@ -323,10 +327,10 @@ p.single-rating {
     cursor: pointer;
   }
 
-  div.more-details {
+  /* div.more-details {
     width: 60%;
     margin: auto;
-  }
+  } */
 
   h4.movie-title {
     cursor: pointer;
