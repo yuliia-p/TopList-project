@@ -1,8 +1,8 @@
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;700&display=swap";
 
 body {
   box-sizing: border-box;
-  font-family: Inter, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   background-color: #111118;
   font-size: 16px;
   color: white;
@@ -106,6 +106,10 @@ span.name {
   font-weight: 100;
   padding: 0;
 }
+
+/* .movie-title {
+  font-family: "Goudy Bookletter 1911", serif;
+} */
 
 .movie-title,
 .year,
@@ -232,6 +236,10 @@ p {
 .info {
   display: flex;
   display: block;
+}
+
+button {
+  font-family: inherit;
 }
 
 .button-style {
